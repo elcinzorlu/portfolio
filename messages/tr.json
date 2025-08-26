@@ -1,0 +1,37 @@
+{
+  "nav": {
+    "home": "Anasayfa",
+    "about": "Hakkımda",
+    "projects": "Projeler",
+    "contact": "İletişim"
+  },
+  "cta": {
+    "login": "Giriş",
+    "signup": "Kayıt ol"
+  },
+  "hero": {
+    "title": "ELÇİN ZORLU",
+    "subtitle": "Backend Yazılım Mühendisi",
+    "description": "Eğitim yolculuğum boyunca, araştırma, öz motivasyon, girişimcilik ve farklı beceriler edinme konularında kendimi geliştirdim. Endüstri Mühendisliği bilgilerimi yazılım ile birleştirerek bu alandaki becerilerimi sürekli olarak geliştirmeye devam ediyorum. Profesyonel çalışma ortamında verimli olmak konusundason derece kararlı ve hevesliyim. Ayrıca, isteklilik, dikkat ve özenli çalışma her zaman başarılı sonuçlara ulaşmanın yolunu açtığına inanıyorum. Bu nedenle, yeteneklerim ve çalışma disiplinimle sizin organizasyonunuza katkı sağlayabileceğim konusunda hiç bir şüphem yok."
+  },
+  "projects": {
+    "title": "Projelerim",
+    "viewDetails": "Detayları Gör"
+  },
+  "footer": {
+    "copy": "© 2025 Backend Mühendisi | Matrix'ten ilham | Retro Vibes ✨"
+  },
+  "project": {
+    "back": "Anasayfaya dön",
+    "enucuzu": {
+      "title": "Enucuzu.com",
+      "short": "Uçuş & Otel Rezervasyon Platformu",
+      "details": "Enucuzu.com; uçak, otel ve araç kiralama rezervasyonları..."
+    },
+    "chatapp": {
+      "title": "ChatApp",
+      "short": "WebSocket ile gerçek zamanlı mesajlaşma",
+      "details": "Node.js & WebSocket, Redis pub/sub, Kubernetes üzerinde..."
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "cta": {
+    "login": "Login",
+    "signup": "Sign Up"
+  },
+  "hero": {
+    "title": "ELCIN ZORLU",
+    "subtitle": "Backend Software Engineer",
+    "description": "Throughout my educational journey, I have developed myself in the areas of research, self- motivation, entrepreneurship, and acquiring different skills. I have integrated my knowledge of Industrial Engineering with software and continue to enhance my skills in this field. I am highly dedicated and enthusiastic about being efficient in the professional work environment. Additionally, I believe that willingness, attentiveness, and careful work always lead to successful outcomes. Therefore, I have no doubt that I can contribute to your organization with my abilities and work discipline."
+  },
+  "projects": {
+    "title": "My Projects",
+    "viewDetails": "View Details"
+  },
+  "footer": {
+    "copy": "© 2025 Backend Engineer | Inspired by the Matrix | Retro Vibes ✨"
+  },
+  "project": {
+    "back": "Return to home page",
+    "enucuzu": {
+      "title": "Enucuzu.com",
+      "short": "Flight & Hotel Booking Platform",
+      "details": "A travel platform for booking flights, hotels, and rental cars. Backend was built with Go using microservices, Dockerized architecture, PostgreSQL for relational data, and Redis for caching/session management."
+    },
+    "chatapp": {
+      "title": "ChatApp",
+      "short": "Real-time messaging with WebSockets",
+      "details": "A real-time chat application developed with Node.js and WebSockets. Redis pub/sub used for scaling across multiple servers. Deployed on Kubernetes cluster for auto-scaling."
+    }
+  }
+}
