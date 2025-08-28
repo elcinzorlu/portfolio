@@ -23,15 +23,27 @@
   },
   "project": {
     "back": "Anasayfaya dön",
+    "techTitle": "Kullanılan Teknolojiler",
     "enucuzu": {
       "title": "Enucuzu.com",
       "short": "Uçuş & Otel Rezervasyon Platformu",
-      "details": "Enucuzu.com; uçak, otel ve araç kiralama rezervasyonları..."
+      "details": "Enucuzu.com, kullanıcıların uçak ve otobüs bileti satın alabildiği, aynı zamanda otel ve araç kiralama rezervasyonu da yapabildiği bir web ve mobil uygulamadır. Bu uygulamanın backend tarafında çeşitli modüllerde roller aldım. Enucuzu projesini Go programlama dili ile mikroservis mimarisi kullanarak geliştirdik. Docker ile projeyi containerize ettik. Mikroservisler arası haberleşmeyi NATS ile sağladık. RDBMS olarak PostgreSQL’de verilerimizi tuttuk. Projede Redis’i cache yöntemi olarak kullandık. Uçak bileti için Biletbank, otobüs bileti için Obilet ve Pamukkale, araç rezervasyonu için Yolcu360, otel rezervasyonu için Otelz ve Amadeus sağlayıcılarının API’lerinin sistemimize entegrasyonlarında rol aldım. Kullanıcının satın aldığı bir biletin veya rezervasyonun PDF’inin Go’nun dinamik template yapısı ile backend tarafından oluşturulduğu servisi ve buradaki PDF tasarımını HTML ve CSS kullanarak geliştirdim. Enucuzu Admin Paneli’nin oluşturulmasında büyük bir rol aldım. Admin paneli; veri analizlerinin, tüm kullanıcı rollerinin ve yetkilerinin görüntülenebildiği ayrı bir projedir."
     },
-    "chatapp": {
-      "title": "ChatApp",
-      "short": "WebSocket ile gerçek zamanlı mesajlaşma",
-      "details": "Node.js & WebSocket, Redis pub/sub, Kubernetes üzerinde..."
+    "yuex": {
+      "title": "Yuex",
+      "short": "Bitcoin ve Kripto Para Platformu",
+      "details": "Go programlama dili, Docker ve mikroservis mimarisi kullanarak bir kripto platormunun geliştirilmesine rol aldım. Mikroservisler arası haberleşmeyi NATS ile sağladık. PostgreSQL’de verilerimizi tuttuk. Akıllı sözleşmelerle çalışan bir blockchain uygulamasının backend tarafını tasarlayıp geliştirdim."
+    },
+    "mepsan": {
+      "title": "Mepsan",
+      "short": "Yeni Nesil Yazar Kasa",
+      "details": "Mepsan yeni nesil yazar kasanın TSM içerisindeki veri bilgilerinin, Mepsan ERP sistemine entegre eden bir API’ın yapılmasında rol aldım. Bu API Python’ın Flask Framework’u kullanılarak geliştirildi. Mepsan yeni nesil yazar kasanın entegre olduğu bir POS uygulaması geliştirilmesinde rol aldım. Bu POS uygulaması yazar kasa ve bankalar arasında köprü görevi görmektedir. Mepsan POS uygulaması Java dili ile MVVM mimarisi ve Retrofit2 kullanılarak geliştirilmiştir."
     }
+  },
+  "contact": {
+    "title": "İletişim",
+    "availableForTitle": "Uygun olduğu alanlar",
+    "availableFor": "Backend geliştirme, mikroservisler, sistem tasarımı, Go/Node ve bulut altyapısı.",
+    "sayHi": "Merhaba de 👋"
   }
 }

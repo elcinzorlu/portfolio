@@ -23,15 +23,27 @@
   },
   "project": {
     "back": "Return to home page",
+    "techTitle": "Technologies Used",
     "enucuzu": {
       "title": "Enucuzu.com",
       "short": "Flight & Hotel Booking Platform",
-      "details": "A travel platform for booking flights, hotels, and rental cars. Backend was built with Go using microservices, Dockerized architecture, PostgreSQL for relational data, and Redis for caching/session management."
+      "details": "Enucuzu.com is a web and mobile application where users can purchase flight and bus tickets, as well as make hotel and car rental reservations. I took part in various backend modules of this application. We developed the Enucuzu project using the Go programming language with a microservices architecture.\n\n We containerized the project with Docker and used NATS for inter-service communication. We stored our data in PostgreSQL as the RDBMS and used Redis as a caching mechanism.\n\n I contributed to the integration of external providers’ APIs into our system, including Biletbank for flights, Obilet and Pamukkale for bus tickets, Yolcu360 for car reservations, and Otelz and Amadeus for hotel bookings.\n\n I developed the service responsible for generating PDFs of purchased tickets or reservations on the backend using Go’s dynamic template system, and designed the PDF layout with HTML and CSS. \n\nI also played a major role in building the Enucuzu Admin Panel, a separate project where data analytics, all user roles, and permissions can be managed and monitored."
     },
-    "chatapp": {
-      "title": "ChatApp",
-      "short": "Real-time messaging with WebSockets",
-      "details": "A real-time chat application developed with Node.js and WebSockets. Redis pub/sub used for scaling across multiple servers. Deployed on Kubernetes cluster for auto-scaling."
+    "yuex": {
+      "title": "Yuex",
+      "short": "Bitcoin ve Cryptocurrency Platform",
+      "details": "I contributed to the development of a crypto platform using the Go programming language, Docker, and microservices architecture. We used NATS for inter-service communication and stored our data in PostgreSQL. I designed and developed the backend of a blockchain application that operates with smart contracts."
+    },
+    "mepsan": {
+      "title": "Mepsan",
+      "short": "Next-Generation Cash Register and POS",
+      "details": "I took part in the development of an API that integrates the data of Mepsan’s next-generation cash register within the TSM into the Mepsan ERP system. This API was developed using Python’s Flask framework. I also contributed to the development of a POS application integrated with Mepsan’s next-generation cash register. This POS application serves as a bridge between the cash register and banks. The Mepsan POS application was developed in Java using the MVVM architecture and Retrofit2."
     }
+  },
+  "contact": {
+    "title": "Contact",
+    "availableForTitle": "Available for",
+    "availableFor": "Backend development, microservices, system design, Go/Node, cloud infra.",
+    "sayHi": "Say hi 👋"
   }
 }

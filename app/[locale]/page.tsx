@@ -65,7 +65,8 @@ export default function Home() {
 
           <ul className="flex gap-6 text-green-300">
             <li className="hover:text-green-500 cursor-pointer">
-              {t("nav.home")}
+              <a href="/">{t("nav.home")}</a>
+
             </li>
             <li className="hover:text-green-500 cursor-pointer">
               {t("nav.about")}
@@ -74,7 +75,7 @@ export default function Home() {
               {t("nav.projects")}
             </li>
             <li className="hover:text-green-500 cursor-pointer">
-              {t("nav.contact")}
+              <a href="#contact">{t("nav.contact")}</a>
             </li>
           </ul>
 
@@ -100,9 +101,8 @@ export default function Home() {
               {t("hero.subtitle")}
             </h2>
             <p className="text-green-200 leading-relaxed">
-             {t("hero.description")}
+              {t("hero.description")}
             </p>
-  
           </div>
 
           <motion.div
@@ -146,6 +146,73 @@ export default function Home() {
           </ul>
         </section>
 
+        {/* Contact */}
+        <section id="contact" className="relative max-w-6xl mx-auto px-6 py-20">
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="md:col-span-2 rounded-2xl border border-emerald-900/60 bg-white/5 p-6 shadow-[0_0_20px_rgba(16,185,129,0.12)]">
+              <h3 className="text-2xl font-bold text-emerald-300 mb-4">
+                {t("nav.contact")}
+              </h3>
+              <ul className="space-y-2 text-emerald-100/90">
+                <li>
+                  📧{" "}
+                  <a
+                    href="mailto:elcinnzorlu@hotmail.com"
+                    className="hover:text-white"
+                  >
+                    elcinnzorlu@hotmail.com
+                  </a>
+                </li>
+                <li>
+                  💼{" "}
+                  <a
+                    href="https://linkedin.com/in/elcinzorlu"
+                    target="_blank"
+                    className="hover:text-white"
+                  >
+                     LinkedIn
+                  </a>
+                </li>
+                <li>
+                  💻{" "}
+                  <a
+                    href="https://github.com/elcinzorlu"
+                    target="_blank"
+                    className="hover:text-white"
+                  >
+                     GitHub
+                  </a>
+                </li>
+                <li>
+                  ✍️{"  "}
+                  <a
+                    href="https://medium.com/@elcinnzorlu"
+                    target="_blank"
+                    className="hover:text-white"
+                  >
+                     Medium
+                  </a>
+                </li>
+                <li>📍 Izmir, TR</li>
+              </ul>
+            </div>
+
+            <div className="rounded-2xl border border-emerald-900/60 bg-white/5 p-6">
+              <h4 className="text-lg font-semibold text-emerald-300">
+              {t('contact.availableForTitle')}
+              </h4>
+              <p className="mt-2 text-emerald-100/90">
+              {t('contact.availableFor')}
+              </p>
+              <a
+                href="mailto:elcinnzorlu@hotmail.com"
+                className="inline-flex mt-4 rounded-xl px-4 py-2 bg-emerald-500 text-black font-semibold hover:bg-emerald-400 transition shadow-[0_0_18px_rgba(16,185,129,0.35)]"
+              >
+                {t('contact.sayHi')}
+              </a>
+            </div>
+          </div>
+        </section>
         {/* Footer */}
         <footer className="p-6 border-t border-green-700 text-center text-green-500 text-sm bg-black/70">
           <p>{t("footer.copy")}</p>
