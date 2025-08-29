@@ -45,5 +45,13 @@
     "availableForTitle": "Available for",
     "availableFor": "Backend development, microservices, system design, Go/Node, cloud infra.",
     "sayHi": "Say hi 👋"
+  },
+  "about": {
+    "title": "About Me",
+    "experience": "Experience",
+    "education": "Education",
+    "skills": "Skills",
+    "present": "Present",
+    "text": "I am a backend engineer passionate about building scalable systems. I focus on Go/Node, microservices, and cloud infrastructure."
   }
 }

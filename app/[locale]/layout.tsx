@@ -3,8 +3,16 @@ import {notFound} from 'next/navigation';
 import {ReactNode} from 'react';
 import {locales, type Locale} from '../../i18n';
 import '../globals.css';
+import {Poppins} from 'next/font/google';
 
 export const dynamic = 'force-static'; // istersen
+
+// ✅ Poppins font import
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  display: 'swap',
+});
 
 export function generateStaticParams() {
   return locales.map((locale) => ({locale}));
@@ -34,7 +42,8 @@ export default async function RootLayout({
 
   return (
     <html lang={locale}>
-      <body>
+      {/* ✅ Poppins font class burada */}
+      <body className={poppins.className}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
         </NextIntlClientProvider>

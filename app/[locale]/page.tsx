@@ -9,6 +9,208 @@ import { motion } from "framer-motion";
 import { projectMetas } from "./projects/projectData";
 import LocaleSwitcher from "./_components/LocaleSwitcher";
 
+// ---- About Section (Timeline + Cards) ----
+import { Briefcase, GraduationCap, Calendar, MapPin } from "lucide-react";
+import ScrollToTop from "./_components/ScrollToTop";
+
+type Experience = {
+  role: string;
+  company: string;
+  location?: string;
+  start: string; // "2023"
+  end: string; // "Present" | "2024"
+  highlights?: string[];
+};
+
+type Education = {
+  school: string;
+  degree: string;
+  location?: string;
+  start: string;
+  end: string;
+  gpa?: string;
+};
+
+function AboutSection() {
+  const t = useTranslations();
+
+  // ---- DOLDUR: Deneme verileri (TR-EN farkını istersen i18n'e taşıyabilirsin) ----
+  const experiences: Experience[] = [
+    {
+      role: "Backend Software Engineer",
+      company: "Enucuzu.com/Yuex Yazılım Teknoloji A. Ş.",
+      location: "Istanbul, TR",
+      start: "2023",
+      end: t("about.present", { default: "Present" }),
+      highlights: [
+        "Go microservices, PostgreSQL, Redis",
+        "Kubernetes + Docker, CI/CD",
+        "High-traffic booking flows, caching & resilience",
+      ],
+    },
+    {
+      role: "Software Engineer ",
+      company: "Mepsan Petrol Cihazları A.Ş.",
+      location: "Remote",
+      start: "2022",
+      end: "2023",
+      highlights: [
+        "Node.js services & WebSocket",
+        "Observability (Prometheus/Grafana)",
+      ],
+    },
+  ];
+
+  const education: Education[] = [
+    {
+      school: "Alanya Alaaddin Keykubat Üniversitesi",
+      degree: "B.Sc. Industrial Engineering",
+      location: "Istanbul, TR",
+      start: "2018",
+      end: "2022",
+      gpa: "3.45/4.00",
+    },
+  ];
+
+  const skills = [
+    "Go",
+    "TypeScript",
+    "PostgreSQL",
+    "Redis",
+    "Docker",
+    "Kubernetes",
+    "gRPC/REST",
+    "CI/CD",
+    "Grafana",
+    "AWS",
+  ];
+
+  return (
+    <section id="about" className="max-w-6xl px-13 py-20 text-left">
+      {/* Başlık */}
+      <motion.h2
+        initial={{ opacity: 0, y: 8 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.5 }}
+        className="text-3xl md:text-4xl font-bold bg-clip-text bg-gradient-to-r text-blue-400 to-cyan-400 mb-8 drop-shadow-[0_0_12px_rgba(16,185,129,0.3)]"
+      >
+        {t("about.title", { default: "About Me" })}
+      </motion.h2>
+
+      {/* Intro Card */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, amount: 0.4 }}
+        className="rounded-2xl border border-blue-400  bg-gradient-to-br from-white/5 to-emerald-500/5 p-6 shadow-[0_0_25px_rgba(16,185,129,0.15)] mb-10"
+      >
+        <p className="text-emerald-100/90 leading-relaxed text-lg">
+          {t("about.text", {
+            default:
+              "I am a backend engineer passionate about building scalable systems. I focus on Go/Node, microservices, and cloud infrastructure.",
+          })}
+        </p>
+      </motion.div>
+
+      <div className="grid lg:grid-cols-3 gap-8 ">
+        {/* Experience Timeline */}
+        <div className="lg:col-span-2">
+          <h3 className="text-2xl font-semibold text-blue-400  mb-4 flex items-center gap-2">
+            <Briefcase className="h-5 w-5 text-blue-400 " />
+            {t("about.experience", { default: "Experience" })}
+          </h3>
+
+          <ol className="relative border-s border-emerald-800/60 ">
+            {experiences.map((exp, idx) => (
+              <li key={idx} className="ms-6 mb-8 border-blue-400 ">
+                <span className="absolute -start-3 flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500/30 border border-blue-400  ">
+                  <div className="h-2.5 w-2.5 rounded-full bg-blue-400 " />
+                </span>
+                <div className="rounded-xl border border-blue-400   from-black/40 to-emerald-900/20 p-4 hover:border-cyan-500/40 transition">
+                  <div className="flex flex-wrap items-center gap-2 text-emerald-200">
+                    <span className="text-white font-semibold">{exp.role}</span>
+                    <span className="text-[#f0b40b]">· {exp.company}</span>
+                  </div>
+
+                  <div className="mt-1 flex flex-wrap gap-3 text-sm text-emerald-300/80">
+                    <span className="inline-flex items-center gap-1">
+                      <Calendar className="h-4 w-4 text-cyan-300" />
+                      {exp.start} — {exp.end}
+                    </span>
+                    {exp.location && (
+                      <span className="inline-flex items-center gap-1">
+                        <MapPin className="h-4 w-4 text-cyan-300" />
+                        {exp.location}
+                      </span>
+                    )}
+                  </div>
+
+                  {exp.highlights && (
+                    <ul className="mt-3 list-disc ms-5 text-emerald-100/90">
+                      {exp.highlights.map((h, i) => (
+                        <li key={i}>{h}</li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+
+        {/* Education + Skills */}
+        <div className="lg:col-span-1">
+          <h3 className="text-2xl font-semibold text-blue-400  mb-4 flex items-center gap-2">
+            <GraduationCap className="h-5 w-5 text-blue-400 " />
+            {t("about.education", { default: "Education" })}
+          </h3>
+
+          {education.map((ed, idx) => (
+            <div
+              key={idx}
+              className="mb-6 rounded-xl border border-blue-400  from-black/40 to-cyan-900/10 p-4 shadow-[0_0_15px_rgba(34,211,238,0.2)]"
+            >
+              <div className="text-white font-semibold">{ed.school}</div>
+              <div className="text-[#f0b40b]">{ed.degree}</div>
+              <div className="mt-1 flex flex-wrap gap-3 text-sm text-emerald-300/80">
+                <span className="inline-flex items-center gap-1">
+                  <Calendar className="h-4 w-4 text-cyan-300" />
+                  {ed.start} — {ed.end}
+                </span>
+                {ed.location && (
+                  <span className="inline-flex items-center gap-1">
+                    <MapPin className="h-4 w-4 text-cyan-300" />
+                    {ed.location}
+                  </span>
+                )}
+                {ed.gpa && (
+                  <span className="inline-flex items-center gap-1">
+                    GPA: {ed.gpa}
+                  </span>
+                )}
+              </div>
+            </div>
+          ))}
+
+          <h4 className="text-lg font-semibold text-blue-400 ">
+            {t("about.skills", { default: "Skills" })}
+          </h4>
+          <div className="flex flex-wrap gap-2 py-5">
+            {skills.map((s) => (
+              <span
+                key={s}
+                className="rounded-full border border-blue-400  from-emerald-500/10 to-cyan-500/10 px-3 py-1 text-sm text-emerald-100 hover:border-cyan-400 hover:shadow-[0_0_10px_rgba(34,211,238,0.4)] transition"
+              >
+                {s}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 // Matrix Rain Component (client)
 function MatrixRain() {
   const canvasRef = useRef(null);
@@ -66,13 +268,13 @@ export default function Home() {
           <ul className="flex gap-6 text-green-300">
             <li className="hover:text-green-500 cursor-pointer">
               <a href="/">{t("nav.home")}</a>
-
             </li>
             <li className="hover:text-green-500 cursor-pointer">
-              {t("nav.about")}
+              <a href="#about"> {t("nav.about")}</a>
             </li>
             <li className="hover:text-green-500 cursor-pointer">
-              {t("nav.projects")}
+            <a href="#projects"> {t("nav.projects")}</a>
+         
             </li>
             <li className="hover:text-green-500 cursor-pointer">
               <a href="#contact">{t("nav.contact")}</a>
@@ -81,18 +283,14 @@ export default function Home() {
 
           <div className="flex gap-2 items-center">
             {/* Dil değiştirici */}
-            <LocaleSwitcher locale={locale as "tr" | "en"} />
             <button className="border border-green-400 text-green-400 px-3 py-1 rounded">
-              {t("cta.login")}
-            </button>
-            <button className="bg-green-500 hover:bg-green-400 text-black px-3 py-1 rounded">
-              {t("cta.signup")}
+              <LocaleSwitcher locale={locale as "tr" | "en"} />
             </button>
           </div>
         </nav>
 
         {/* Hero */}
-        <section className="grid md:grid-cols-2 gap-12 items-center px-12 py-20">
+        <section className="grid md:grid-cols-2 gap-12 items-center px-12 py-10">
           <div>
             <h1 className="text-5xl font-extrabold text-green-400 mb-4">
               {t("hero.title")}
@@ -115,20 +313,22 @@ export default function Home() {
               src="/elcin.jpeg"
               alt="ELÇİN ZORLU"
               className="rounded-2xl shadow-[0_0_25px_rgba(0,255,0,0.7)]"
-              width={400}
-              height={400}
+              width={300}
+              height={300}
               priority
             />
           </motion.div>
         </section>
 
+        <AboutSection />
+
         {/* Projects */}
-        <section className="px-8 py-12">
-          <h1 className="text-3xl font-bold mb-6 text-green-400">
+        <section id="projects" className="px-13 py-12">
+          <h1 className="text-4xl font-bold mb-6 text-green-400">
             {t("projects.title")}
           </h1>
 
-          <ul className="grid md:grid-cols-3 gap-6">
+          <ul className="grid md:grid-cols-3 gap-6 py-8">
             {projectMetas.map((p) => (
               <li key={p.id} className="p-4 border border-green-400 rounded-lg">
                 <h2 className="text-xl font-semibold mb-2">
@@ -170,7 +370,7 @@ export default function Home() {
                     target="_blank"
                     className="hover:text-white"
                   >
-                     LinkedIn
+                    LinkedIn
                   </a>
                 </li>
                 <li>
@@ -180,7 +380,7 @@ export default function Home() {
                     target="_blank"
                     className="hover:text-white"
                   >
-                     GitHub
+                    GitHub
                   </a>
                 </li>
                 <li>
@@ -190,7 +390,7 @@ export default function Home() {
                     target="_blank"
                     className="hover:text-white"
                   >
-                     Medium
+                    Medium
                   </a>
                 </li>
                 <li>📍 Izmir, TR</li>
@@ -199,20 +399,22 @@ export default function Home() {
 
             <div className="rounded-2xl border border-emerald-900/60 bg-white/5 p-6">
               <h4 className="text-lg font-semibold text-emerald-300">
-              {t('contact.availableForTitle')}
+                {t("contact.availableForTitle")}
               </h4>
               <p className="mt-2 text-emerald-100/90">
-              {t('contact.availableFor')}
+                {t("contact.availableFor")}
               </p>
               <a
                 href="mailto:elcinnzorlu@hotmail.com"
                 className="inline-flex mt-4 rounded-xl px-4 py-2 bg-emerald-500 text-black font-semibold hover:bg-emerald-400 transition shadow-[0_0_18px_rgba(16,185,129,0.35)]"
               >
-                {t('contact.sayHi')}
+                {t("contact.sayHi")}
               </a>
             </div>
           </div>
         </section>
+
+        <ScrollToTop />
         {/* Footer */}
         <footer className="p-6 border-t border-green-700 text-center text-green-500 text-sm bg-black/70">
           <p>{t("footer.copy")}</p>

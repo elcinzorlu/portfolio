@@ -15,7 +15,7 @@
     "description": "Eğitim yolculuğum boyunca, araştırma, öz motivasyon, girişimcilik ve farklı beceriler edinme konularında kendimi geliştirdim. Endüstri Mühendisliği bilgilerimi yazılım ile birleştirerek bu alandaki becerilerimi sürekli olarak geliştirmeye devam ediyorum. Profesyonel çalışma ortamında verimli olmak konusundason derece kararlı ve hevesliyim. Ayrıca, isteklilik, dikkat ve özenli çalışma her zaman başarılı sonuçlara ulaşmanın yolunu açtığına inanıyorum. Bu nedenle, yeteneklerim ve çalışma disiplinimle sizin organizasyonunuza katkı sağlayabileceğim konusunda hiç bir şüphem yok."
   },
   "projects": {
-    "title": "Projelerim",
+    "title": "Katkı Sağladığım Projeler",
     "viewDetails": "Detayları Gör"
   },
   "footer": {
@@ -45,5 +45,13 @@
     "availableForTitle": "Uygun olduğu alanlar",
     "availableFor": "Backend geliştirme, mikroservisler, sistem tasarımı, Go/Node ve bulut altyapısı.",
     "sayHi": "Merhaba de 👋"
+  },
+  "about": {
+    "title": "Hakkımda",
+    "experience": "Deneyim",
+    "education": "Eğitim",
+    "skills": "Yetenekler",
+    "present": "Güncel",
+    "text": "Ölçeklenebilir sistemler geliştirmeyi seven bir backend mühendisiyim. Go/Node, mikroservisler ve bulut altyapısına odaklanıyorum."
   }
 }
