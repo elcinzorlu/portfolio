@@ -1,24 +1,26 @@
+// app/[locale]/layout.tsx
 import {NextIntlClientProvider} from 'next-intl';
 import {notFound} from 'next/navigation';
 import type {ReactNode} from 'react';
 import {locales, type Locale} from '../../i18n';
 import '../globals.css';
 import {Poppins} from 'next/font/google';
-import type {LayoutProps} from 'next';
 
-// ✅ Poppins font import
+export const dynamic = 'force-static';
+
+// Font
 const poppins = Poppins({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
   display: 'swap',
 });
 
-export const dynamic = 'force-static';
-
+// (SSG için) locale paramlarını üret
 export function generateStaticParams() {
-  return locales.map((locale) => ({locale}));
+  return locales.map((locale) => ({ locale }));
 }
 
+// Mesajları yükle
 async function getMessages(locale: Locale) {
   try {
     const messages = (await import(`../../messages/${locale}.json`)).default;
@@ -28,12 +30,15 @@ async function getMessages(locale: Locale) {
   }
 }
 
+// ✅ Typed-routes uyumlu: params Promise olabilir → await et
 export default async function RootLayout({
   children,
   params,
-}: LayoutProps<"/[locale]"> & {children: ReactNode}) {
-  // ❗ Next.js 15 → params Promise olabilir, await et
-  const {locale} = await params;
+}: {
+  children: ReactNode;
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
 
   if (!locales.includes(locale as Locale)) notFound();
 
