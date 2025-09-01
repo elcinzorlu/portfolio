@@ -17,8 +17,8 @@ type Experience = {
   role: string;
   company: string;
   location?: string;
-  start: string; // "2023"
-  end: string; // "Present" | "2024"
+  start: string;
+  end: string;
   highlights?: string[];
 };
 
@@ -34,7 +34,6 @@ type Education = {
 function AboutSection() {
   const t = useTranslations();
 
-  // ---- DOLDUR: Deneme verileri (TR-EN farkını istersen i18n'e taşıyabilirsin) ----
   const experiences: Experience[] = [
     {
       role: "Backend Software Engineer",
@@ -87,7 +86,6 @@ function AboutSection() {
 
   return (
     <section id="about" className="max-w-6xl px-13 py-20 text-left">
-      {/* Başlık */}
       <motion.h2
         initial={{ opacity: 0, y: 8 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -97,12 +95,11 @@ function AboutSection() {
         {t("about.title", { default: "About Me" })}
       </motion.h2>
 
-      {/* Intro Card */}
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true, amount: 0.4 }}
-        className="rounded-2xl border border-blue-400  bg-gradient-to-br from-white/5 to-emerald-500/5 p-6 shadow-[0_0_25px_rgba(16,185,129,0.15)] mb-10"
+        className="rounded-2xl border border-blue-400 bg-gradient-to-br from-white/5 to-emerald-500/5 p-6 shadow-[0_0_25px_rgba(16,185,129,0.15)] mb-10"
       >
         <p className="text-emerald-100/90 leading-relaxed text-lg">
           {t("about.text", {
@@ -113,9 +110,8 @@ function AboutSection() {
       </motion.div>
 
       <div className="grid lg:grid-cols-3 gap-8 ">
-        {/* Experience Timeline */}
         <div className="lg:col-span-2">
-          <h3 className="text-2xl font-semibold text-blue-400  mb-4 flex items-center gap-2">
+          <h3 className="text-2xl font-semibold text-blue-400 mb-4 flex items-center gap-2">
             <Briefcase className="h-5 w-5 text-blue-400 " />
             {t("about.experience", { default: "Experience" })}
           </h3>
@@ -123,10 +119,10 @@ function AboutSection() {
           <ol className="relative border-s border-emerald-800/60 ">
             {experiences.map((exp, idx) => (
               <li key={idx} className="ms-6 mb-8 border-blue-400 ">
-                <span className="absolute -start-3 flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500/30 border border-blue-400  ">
+                <span className="absolute -start-3 flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500/30 border border-blue-400">
                   <div className="h-2.5 w-2.5 rounded-full bg-blue-400 " />
                 </span>
-                <div className="rounded-xl border border-blue-400   from-black/40 to-emerald-900/20 p-4 hover:border-cyan-500/40 transition">
+                <div className="rounded-xl border border-blue-400 from-black/40 to-emerald-900/20 p-4 hover:border-cyan-500/40 transition">
                   <div className="flex flex-wrap items-center gap-2 text-emerald-200">
                     <span className="text-white font-semibold">{exp.role}</span>
                     <span className="text-[#f0b40b]">· {exp.company}</span>
@@ -158,9 +154,8 @@ function AboutSection() {
           </ol>
         </div>
 
-        {/* Education + Skills */}
         <div className="lg:col-span-1">
-          <h3 className="text-2xl font-semibold text-blue-400  mb-4 flex items-center gap-2">
+          <h3 className="text-2xl font-semibold text-blue-400 mb-4 flex items-center gap-2">
             <GraduationCap className="h-5 w-5 text-blue-400 " />
             {t("about.education", { default: "Education" })}
           </h3>
@@ -168,7 +163,7 @@ function AboutSection() {
           {education.map((ed, idx) => (
             <div
               key={idx}
-              className="mb-6 rounded-xl border border-blue-400  from-black/40 to-cyan-900/10 p-4 shadow-[0_0_15px_rgba(34,211,238,0.2)]"
+              className="mb-6 rounded-xl border border-blue-400 from-black/40 to-cyan-900/10 p-4 shadow-[0_0_15px_rgba(34,211,238,0.2)]"
             >
               <div className="text-white font-semibold">{ed.school}</div>
               <div className="text-[#f0b40b]">{ed.degree}</div>
@@ -199,7 +194,7 @@ function AboutSection() {
             {skills.map((s) => (
               <span
                 key={s}
-                className="rounded-full border border-blue-400  from-emerald-500/10 to-cyan-500/10 px-3 py-1 text-sm text-emerald-100 hover:border-cyan-400 hover:shadow-[0_0_10px_rgba(34,211,238,0.4)] transition"
+                className="rounded-full border border-blue-400 from-emerald-500/10 to-cyan-500/10 px-3 py-1 text-sm text-emerald-100 hover:border-cyan-400 hover:shadow-[0_0_10px_rgba(34,211,238,0.4)] transition"
               >
                 {s}
               </span>
@@ -211,7 +206,6 @@ function AboutSection() {
   );
 }
 
-// Matrix Rain Component (client)
 function MatrixRain() {
   const canvasRef = useRef(null);
   useEffect(() => {
@@ -250,9 +244,9 @@ function MatrixRain() {
     />
   );
 }
+
 export default function Home() {
   const t = useTranslations();
-  // Client component’te locale’i almak için useParams:
   const params = useParams<{ locale: string }>();
   const locale = params?.locale ?? "tr";
 
@@ -261,20 +255,18 @@ export default function Home() {
       <MatrixRain />
 
       <div className="relative z-10">
-        {/* Navbar */}
         <nav className="flex justify-between items-center p-6 border-b border-green-700 bg-black/70">
           <div className="text-2xl font-bold text-green-400">Portfolio</div>
 
           <ul className="flex gap-6 text-green-300">
             <li className="hover:text-green-500 cursor-pointer">
-              <a href="/">{t("nav.home")}</a>
+              <Link href={`/${locale}`}>{t("nav.home")}</Link>
             </li>
             <li className="hover:text-green-500 cursor-pointer">
-              <a href="#about"> {t("nav.about")}</a>
+              <a href="#about">{t("nav.about")}</a>
             </li>
             <li className="hover:text-green-500 cursor-pointer">
-            <a href="#projects"> {t("nav.projects")}</a>
-         
+              <a href="#projects">{t("nav.projects")}</a>
             </li>
             <li className="hover:text-green-500 cursor-pointer">
               <a href="#contact">{t("nav.contact")}</a>
@@ -282,7 +274,6 @@ export default function Home() {
           </ul>
 
           <div className="flex gap-2 items-center">
-            {/* Dil değiştirici */}
             <button className="border border-green-400 text-green-400 px-3 py-1 rounded">
               <LocaleSwitcher locale={locale as "tr" | "en"} />
             </button>
@@ -322,7 +313,6 @@ export default function Home() {
 
         <AboutSection />
 
-        {/* Projects */}
         <section id="projects" className="px-13 py-12">
           <h1 className="text-4xl font-bold mb-6 text-green-400">
             {t("projects.title")}
@@ -346,7 +336,6 @@ export default function Home() {
           </ul>
         </section>
 
-        {/* Contact */}
         <section id="contact" className="relative max-w-6xl mx-auto px-6 py-20">
           <div className="grid md:grid-cols-3 gap-6">
             <div className="md:col-span-2 rounded-2xl border border-emerald-900/60 bg-white/5 p-6 shadow-[0_0_20px_rgba(16,185,129,0.12)]">
@@ -415,7 +404,7 @@ export default function Home() {
         </section>
 
         <ScrollToTop />
-        {/* Footer */}
+
         <footer className="p-6 border-t border-green-700 text-center text-green-500 text-sm bg-black/70">
           <p>{t("footer.copy")}</p>
         </footer>
