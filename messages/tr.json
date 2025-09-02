@@ -12,7 +12,7 @@
   "hero": {
     "title": "ELÇİN ZORLU",
     "subtitle": "Backend Yazılım Mühendisi",
-    "description": "Eğitim yolculuğum boyunca, araştırma, öz motivasyon, girişimcilik ve farklı beceriler edinme konularında kendimi geliştirdim. Endüstri Mühendisliği bilgilerimi yazılım ile birleştirerek bu alandaki becerilerimi sürekli olarak geliştirmeye devam ediyorum. Profesyonel çalışma ortamında verimli olmak konusundason derece kararlı ve hevesliyim. Ayrıca, isteklilik, dikkat ve özenli çalışma her zaman başarılı sonuçlara ulaşmanın yolunu açtığına inanıyorum. Bu nedenle, yeteneklerim ve çalışma disiplinimle sizin organizasyonunuza katkı sağlayabileceğim konusunda hiç bir şüphem yok."
+    "description": "Eğitim yolculuğum boyunca, araştırma, öz motivasyon, girişimcilik ve farklı beceriler edinme konularında kendimi geliştirdim. Endüstri Mühendisliği bilgilerimi yazılım ile birleştirerek bu alandaki becerilerimi sürekli olarak geliştirmeye devam ediyorum. Profesyonel çalışma ortamında verimli olmak konusunda son derece kararlı ve hevesliyim. Ayrıca, isteklilik, dikkat ve özenli çalışma her zaman başarılı sonuçlara ulaşmanın yolunu açtığına inanıyorum. Bu nedenle, yeteneklerim ve çalışma disiplinimle sizin organizasyonunuza katkı sağlayabileceğim konusunda hiç bir şüphem yok."
   },
   "projects": {
     "title": "Katkı Sağladığım Projeler",
@@ -50,8 +50,8 @@
     "title": "Hakkımda",
     "experience": "Deneyim",
     "education": "Eğitim",
-    "skills": "Yetenekler",
+    "skills": "Lisans ve Sertifikalar",
     "present": "Güncel",
-    "text": "Ölçeklenebilir sistemler geliştirmeyi seven bir backend mühendisiyim. Go/Node, mikroservisler ve bulut altyapısına odaklanıyorum."
+    "text": "Endüstri Mühendisliği mezunuyum ve analitik bakış açımı yazılım geliştirme alanına taşıyarak kariyerime yön verdim. Backend geliştirme, mikroservis mimarisi ve modern teknolojilerle ölçeklenebilir çözümler üretme konusunda deneyim sahibiyim. Sürekli öğrenmeye açık, çözüm odaklı ve ekip çalışmasına uyumlu bir yapıya sahibim."
   }
 }

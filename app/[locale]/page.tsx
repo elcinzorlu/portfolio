@@ -38,24 +38,45 @@ function AboutSection() {
     {
       role: "Backend Software Engineer",
       company: "Enucuzu.com/Yuex Yazılım Teknoloji A. Ş.",
-      location: "Istanbul, TR",
-      start: "2023",
+      location: "Izmir, TR",
+      start: "2022",
       end: t("about.present", { default: "Present" }),
       highlights: [
         "Go microservices, PostgreSQL, Redis",
-        "Kubernetes + Docker, CI/CD",
+        "Kubernetes + Docker, CI/CD, Grafana",
         "High-traffic booking flows, caching & resilience",
       ],
     },
     {
       role: "Software Engineer ",
       company: "Mepsan Petrol Cihazları A.Ş.",
-      location: "Remote",
-      start: "2022",
-      end: "2023",
+      location: "Izmir, TR",
+      start: "2021",
+      end: "2022",
       highlights: [
-        "Node.js services & WebSocket",
-        "Observability (Prometheus/Grafana)",
+        "Python, Flask API, Java Android, POS",
+        "MongoDB, CI/CD",
+      ],
+    },
+    {
+      role: "Software Engineer Intern",
+      company: "Mepsan Petrol Cihazları A.Ş.",
+      location: "Izmir, TR",
+      start: "2021",
+      end: "2021",
+      highlights: [
+        "Python, Flask API, Java Android, POS",
+        "MongoDB, CI/CD",
+      ],
+    },
+    {
+      role: "Industrial Engineer Intern",
+      company: "Ugur Promilling",
+      location: "Çorum, TR",
+      start: "2019",
+      end: "2019",
+      highlights: [
+        "Project management, Quality, Manufacure",
       ],
     },
   ];
@@ -64,24 +85,17 @@ function AboutSection() {
     {
       school: "Alanya Alaaddin Keykubat Üniversitesi",
       degree: "B.Sc. Industrial Engineering",
-      location: "Istanbul, TR",
-      start: "2018",
-      end: "2022",
-      gpa: "3.45/4.00",
+      location: "Antalya, TR",
+      start: "2017",
+      end: "2021",
     },
   ];
 
   const skills = [
-    "Go",
-    "TypeScript",
-    "PostgreSQL",
-    "Redis",
-    "Docker",
-    "Kubernetes",
-    "gRPC/REST",
-    "CI/CD",
-    "Grafana",
-    "AWS",
+    "Agile Development Day - Coderspace 2024",
+    "Girişimcilik eğitimi-KOSGEB",
+    "Java Kodlama Eğitimi-Ecodation",
+    "Yazılım Uzmanlığı(C# ve MsSql)-Platon Bilişim",
   ];
 
   return (
@@ -95,19 +109,7 @@ function AboutSection() {
         {t("about.title", { default: "About Me" })}
       </motion.h2>
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true, amount: 0.4 }}
-        className="rounded-2xl border border-blue-400 bg-gradient-to-br from-white/5 to-emerald-500/5 p-6 shadow-[0_0_25px_rgba(16,185,129,0.15)] mb-10"
-      >
-        <p className="text-emerald-100/90 leading-relaxed text-lg">
-          {t("about.text", {
-            default:
-              "I am a backend engineer passionate about building scalable systems. I focus on Go/Node, microservices, and cloud infrastructure.",
-          })}
-        </p>
-      </motion.div>
+  
 
       <div className="grid lg:grid-cols-3 gap-8 ">
         <div className="lg:col-span-2">
@@ -177,12 +179,7 @@ function AboutSection() {
                     <MapPin className="h-4 w-4 text-cyan-300" />
                     {ed.location}
                   </span>
-                )}
-                {ed.gpa && (
-                  <span className="inline-flex items-center gap-1">
-                    GPA: {ed.gpa}
-                  </span>
-                )}
+                )}      
               </div>
             </div>
           ))}
