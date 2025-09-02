@@ -12,6 +12,7 @@ import LocaleSwitcher from "./_components/LocaleSwitcher";
 // ---- About Section (Timeline + Cards) ----
 import { Briefcase, GraduationCap, Calendar, MapPin } from "lucide-react";
 import ScrollToTop from "./_components/ScrollToTop";
+import ResponsiveNav from "./_components/ResponsiveNav";
 
 type Experience = {
   role: string;
@@ -53,10 +54,7 @@ function AboutSection() {
       location: "Izmir, TR",
       start: "2021",
       end: "2022",
-      highlights: [
-        "Python, Flask API, Java Android, POS",
-        "MongoDB, CI/CD",
-      ],
+      highlights: ["Python, Flask API, Java Android, POS", "MongoDB, CI/CD"],
     },
     {
       role: "Software Engineer Intern",
@@ -64,10 +62,7 @@ function AboutSection() {
       location: "Izmir, TR",
       start: "2021",
       end: "2021",
-      highlights: [
-        "Python, Flask API, Java Android, POS",
-        "MongoDB, CI/CD",
-      ],
+      highlights: ["Python, Flask API, Java Android, POS", "MongoDB, CI/CD"],
     },
     {
       role: "Industrial Engineer Intern",
@@ -75,9 +70,7 @@ function AboutSection() {
       location: "Çorum, TR",
       start: "2019",
       end: "2019",
-      highlights: [
-        "Project management, Quality, Manufacure",
-      ],
+      highlights: ["Project management, Quality, Manufacure"],
     },
   ];
 
@@ -108,8 +101,6 @@ function AboutSection() {
       >
         {t("about.title", { default: "About Me" })}
       </motion.h2>
-
-  
 
       <div className="grid lg:grid-cols-3 gap-8 ">
         <div className="lg:col-span-2">
@@ -179,7 +170,7 @@ function AboutSection() {
                     <MapPin className="h-4 w-4 text-cyan-300" />
                     {ed.location}
                   </span>
-                )}      
+                )}
               </div>
             </div>
           ))}
@@ -252,30 +243,7 @@ export default function Home() {
       <MatrixRain />
 
       <div className="relative z-10">
-        <nav className="flex justify-between items-center p-6 border-b border-green-700 bg-black/70">
-          <div className="text-2xl font-bold text-green-400">Portfolio</div>
-
-          <ul className="flex gap-6 text-green-300">
-            <li className="hover:text-green-500 cursor-pointer">
-              <Link href={`/${locale}`}>{t("nav.home")}</Link>
-            </li>
-            <li className="hover:text-green-500 cursor-pointer">
-              <a href="#about">{t("nav.about")}</a>
-            </li>
-            <li className="hover:text-green-500 cursor-pointer">
-              <a href="#projects">{t("nav.projects")}</a>
-            </li>
-            <li className="hover:text-green-500 cursor-pointer">
-              <a href="#contact">{t("nav.contact")}</a>
-            </li>
-          </ul>
-
-          <div className="flex gap-2 items-center">
-            <button className="border border-green-400 text-green-400 px-3 py-1 rounded">
-              <LocaleSwitcher locale={locale as "tr" | "en"} />
-            </button>
-          </div>
-        </nav>
+        <ResponsiveNav />
 
         {/* Hero */}
         <section className="grid md:grid-cols-2 gap-12 items-center px-12 py-10">
